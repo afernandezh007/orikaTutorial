@@ -12,4 +12,12 @@ public class DummyTable {
     private Long id;
 
     private String value;
+
+    private String sameName;
+
+    private String dtoToEntityValue;
+
+    private String entityToDtoValue;
+
+    private String blob;
 }
