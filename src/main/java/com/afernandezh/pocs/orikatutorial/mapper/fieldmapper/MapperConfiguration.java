@@ -7,24 +7,24 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Configuration class for all ConfigurableMappers
- *
  */
 @Configuration
 public class MapperConfiguration {
 
-  //------------------------------------------------------------------------------------------------
-  //mappers
-  //------------------------------------------------------------------------------------------------
-  @Autowired
-  @Qualifier("entityToDtoFieldMapper")
-  private EntityToDtoFieldMapper entityToDtoFieldMapper;
+    //----------------------------------------------------------------------------------
+    //mappers
+    //----------------------------------------------------------------------------------
+    @Autowired
+    @Qualifier("dummyFieldMapper")
+    private DummyFieldMapper dummyFieldMapper;
 
-  /**
-   * Method to configure each fieldmapper with the mapperFactory given by parameter
-   * @param mapperFactory
-   */
-  public void registerConfigurableMappers(DefaultMapperFactory mapperFactory) {
+    /**
+     * Method to configure each fieldMapper with the mapperFactory given by parameter
+     *
+     * @param mapperFactory
+     */
+    public void registerConfigurableMappers(DefaultMapperFactory mapperFactory) {
 
-    entityToDtoFieldMapper.configure(mapperFactory);
-  }
+        dummyFieldMapper.configure(mapperFactory);
+    }
 }

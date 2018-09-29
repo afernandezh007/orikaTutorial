@@ -8,28 +8,32 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Configuration class for all CustomConverters
- *
- * @author atSistemas
- *
  */
 @Configuration
 public class ConverterConfiguration {
 
-  public static final String ENTITY_TO_DTO_CONVERTER = "EntityToDtoConverter";
+    public static final String DUMMY_CONVERTER = "DummyConverter";
+    public static final String DUMMY_CONVERTER_BIDIRECTIONAL = "DummyConverterBiDirectional";
 
-  //------------------------------------------------------------------------------------------------
-  //converters
-  //------------------------------------------------------------------------------------------------
-  @Autowired
-  @Qualifier("entityToDtoConverter")
-  private EntityToDtoConverter entityToDtoConverter;
+    //----------------------------------------------------------------------------------
+    //converters
+    //----------------------------------------------------------------------------------
+    @Autowired
+    @Qualifier("dummyConverter")
+    private DummyConverter dummyConverter;
 
-  /**
-   * Method to register each converter in the mapperFactory given by parameter
-   * @param mapperFactory
-   */
-  public void registerCustomConverters(DefaultMapperFactory mapperFactory) {
-    ConverterFactory converterFactory = mapperFactory.getConverterFactory();
-    converterFactory.registerConverter(ENTITY_TO_DTO_CONVERTER, entityToDtoConverter);
-  }
+    @Autowired
+    @Qualifier("dummyBiDirectionalConverter")
+    private DummyBiDirectionalConverter dummyBiDirectionalConverter;
+
+    /**
+     * Method to register each converter in the mapperFactory given by parameter
+     *
+     * @param mapperFactory
+     */
+    public void registerCustomConverters(DefaultMapperFactory mapperFactory) {
+        ConverterFactory converterFactory = mapperFactory.getConverterFactory();
+        converterFactory.registerConverter(DUMMY_CONVERTER, dummyConverter);
+        converterFactory.registerConverter(DUMMY_CONVERTER_BIDIRECTIONAL, dummyBiDirectionalConverter);
+    }
 }
