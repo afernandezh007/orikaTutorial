@@ -78,6 +78,4 @@ public class DummyBiDirectionalConverter extends AbstractBiDirectionalConverter<
                 .append(source.getAge());
         target.setClob(strBuilder.toString());
     }
-
-
 }

@@ -37,6 +37,7 @@ public class DummyConverter extends AbstractConverter<DummyTable, DummyDto> {
      * @param source
      * @param target
      */
+    @Override
     protected void fillOtherFields(DummyTable source, DummyDto target) {
 
         String blob = source.getClob();
