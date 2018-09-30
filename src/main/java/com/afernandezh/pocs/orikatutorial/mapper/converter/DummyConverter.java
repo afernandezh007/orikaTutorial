@@ -39,7 +39,7 @@ public class DummyConverter extends AbstractConverter<DummyTable, DummyDto> {
      */
     protected void fillOtherFields(DummyTable source, DummyDto target) {
 
-        String blob = source.getBlob();
+        String blob = source.getClob();
 
         String[] split = blob.split("#");
 

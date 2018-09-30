@@ -19,5 +19,5 @@ public class DummyTable {
 
     private String entityToDtoValue;
 
-    private String blob;
+    private String clob;
 }

@@ -38,7 +38,7 @@ public class DummyBiDirectionalConverter extends AbstractBiDirectionalConverter<
      */
     protected void fillOtherFieldsTo(DummyTable source, DummyDto target) {
 
-        String blob = source.getBlob();
+        String blob = source.getClob();
 
         String[] split = blob.split("#");
 
@@ -76,7 +76,7 @@ public class DummyBiDirectionalConverter extends AbstractBiDirectionalConverter<
         strBuilder.append(source.getName()).append("#")
                 .append(source.getSurname()).append("#")
                 .append(source.getAge());
-        target.setBlob(strBuilder.toString());
+        target.setClob(strBuilder.toString());
     }
 
 

@@ -30,7 +30,7 @@ public class OrikaTutorialTests {
         entity.setId(100L);
         entity.setValue("test value");
         entity.setSameName("the same name in both classes");
-        entity.setBlob("Antonio#Fernández Hernández#31");
+        entity.setClob("Antonio#Fernández Hernández#31");
         entity.setEntityToDtoValue("entityToDtoOnly");
         return entity;
     }
@@ -83,7 +83,7 @@ public class OrikaTutorialTests {
         assertNotNull("Expected not null value", entity.getValue());
         assertNotNull("Expected not null value", entity.getDtoToEntityValue());
         assertNull("Expected null value", entity.getEntityToDtoValue());
-        assertNotNull("Expected not null value", entity.getBlob());
+        assertNotNull("Expected not null value", entity.getClob());
     }
 
 }
